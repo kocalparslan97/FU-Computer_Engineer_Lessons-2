@@ -1,0 +1,16 @@
+library IEEE; 
+ use IEEE.STD_LOGIC_1164.ALL; 
+ use IEEE.NUMERIC_STD.ALL; 
+ entity ALU is 
+ Port ( giris1 : in signed (7 downto 0); 
+      	giris2 : in signed (7 downto 0);
+      	secme : in STD_LOGIC;
+      	cikis : out signed (7 downto 0));
+end ALU;
+ architecture Behv of ALU is
+ begin
+with secme select
+ cikis <= giris1 + giris2 when '0',
+  	       giris1 - giris2 when '1', 
+"ZZZZZZZZ" when others;
+ end Behv;
